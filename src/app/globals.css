@@ -1,17 +1,20 @@
 :root {
-  --ink: #1d1c1a;
-  --graphite: #343434;
-  --slate: #4b4b49;
-  --steel: #666766;
-  --mist: #dedbd4;
-  --cloud: #f3f1ed;
-  --paper: #faf8f3;
-  --muted: #77736b;
-  --gold: #caa85f;
-  --goldDeep: #8c6d32;
-  --line: rgba(29, 28, 26, 0.12);
-  --goldLine: rgba(202, 168, 95, 0.42);
-  --shadow: 0 26px 80px rgba(38, 38, 35, 0.18);
+  --ink: #171b1f;
+  --charcoal: #171b1f;
+  --graphite: #26313a;
+  --slate: #3a4650;
+  --steel: #5f6b73;
+  --mist: #e7e9ea;
+  --cloud: #f8f8f6;
+  --paper: #ffffff;
+  --muted: #606a70;
+  --gold: #d6a83f;
+  --goldSoft: #f1c86b;
+  --goldDeep: #9b6f16;
+  --line: rgba(23, 27, 31, 0.13);
+  --goldLine: rgba(214, 168, 63, 0.56);
+  --shadow: 0 28px 90px rgba(12, 18, 24, 0.18);
+  --font-serif: Georgia, 'Times New Roman', serif;
 }
 
 * { box-sizing: border-box; }
@@ -20,8 +23,8 @@ body {
   margin: 0;
   color: var(--ink);
   background:
-    radial-gradient(circle at 12% 8%, rgba(202,168,95,.14), transparent 24%),
-    linear-gradient(180deg, #ebe8e1 0%, var(--paper) 34%, #efede8 100%);
+    radial-gradient(circle at 12% 8%, rgba(214,168,63,.16), transparent 24%),
+    linear-gradient(180deg, #f2f3f3 0%, var(--paper) 36%, #eef0f1 100%);
   font-family: Arial, Helvetica, sans-serif;
 }
 a { color: inherit; text-decoration: none; }
@@ -32,8 +35,8 @@ img { max-width: 100%; }
   min-height: 100vh;
   color: var(--cloud);
   background:
-    linear-gradient(110deg, rgba(52,52,52,.98), rgba(83,83,80,.92) 58%, rgba(112,109,101,.84)),
-    radial-gradient(circle at 82% 18%, rgba(202,168,95,.32), transparent 34%);
+    linear-gradient(110deg, rgba(25,31,37,.98), rgba(45,57,67,.96) 58%, rgba(76,86,94,.90)),
+    radial-gradient(circle at 82% 18%, rgba(214,168,63,.42), transparent 34%);
   border-bottom: 1px solid var(--goldLine);
   padding: 28px clamp(18px, 5vw, 72px) 72px;
   position: relative;
@@ -60,7 +63,7 @@ img { max-width: 100%; }
   margin: 0 auto;
   border: 1px solid rgba(243,241,237,.24);
   padding: 14px 18px;
-  background: rgba(72,72,70,.62);
+  background: rgba(35,45,53,.72);
   backdrop-filter: blur(16px);
   box-shadow: 0 18px 52px rgba(0,0,0,.16);
 }
@@ -71,7 +74,7 @@ img { max-width: 100%; }
   display: grid;
   place-items: center;
   border: 1px solid var(--gold);
-  background: #686867;
+  background: #2d3943;
   overflow: hidden;
 }
 .logoMark img { width: 100%; height: 100%; object-fit: contain; padding: 5px; display: block; }
@@ -110,8 +113,8 @@ h2 { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(32px, 4vw,
   font-weight: 800;
   transition: .2s ease;
 }
-.primaryButton { background: var(--gold); color: #252420; }
-.primaryButton:hover { background: #e1bf75; transform: translateY(-2px); }
+.primaryButton { background: var(--gold); color: #171b1f; box-shadow: 0 12px 34px rgba(155,111,22,.24); }
+.primaryButton:hover { background: var(--goldSoft); transform: translateY(-2px); }
 .secondaryButton { color: var(--cloud); background: transparent; border-color: rgba(243,241,237,.28); }
 .secondaryButton:hover { border-color: var(--gold); color: var(--gold); }
 .primaryButton.light { background: var(--cloud); border-color: var(--cloud); color: var(--graphite); }
@@ -135,9 +138,9 @@ h2 { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(32px, 4vw,
 .heroPanel:before { content: ''; position: absolute; inset: 18px; border: 1px solid rgba(202,168,95,.26); pointer-events: none; }
 .panelTop, .panelFooter { letter-spacing: .2em; color: var(--gold); font-size: 12px; font-weight: 800; position: relative; z-index: 1; }
 .panelFooter { display: flex; align-items: center; gap: 8px; }
-.panelLogoFrame { width: min(100%, 300px); aspect-ratio: 1 / 1; margin: 42px auto 18px; display: grid; place-items: center; background: #686867; border: 1px solid rgba(202,168,95,.55); box-shadow: inset 0 0 0 16px rgba(255,255,255,.04), 0 22px 70px rgba(0,0,0,.20); position: relative; z-index: 1; }
+.panelLogoFrame { width: min(100%, 300px); aspect-ratio: 1 / 1; margin: 42px auto 18px; display: grid; place-items: center; background: #2d3943; border: 1px solid rgba(202,168,95,.55); box-shadow: inset 0 0 0 16px rgba(255,255,255,.04), 0 22px 70px rgba(0,0,0,.20); position: relative; z-index: 1; }
 .panelLogoFrame img { width: 86%; height: 86%; object-fit: contain; display: block; }
-.panelFeature { border: 1px solid rgba(243,241,237,.16); background: rgba(52,52,52,.42); padding: 18px; display: grid; grid-template-columns: 28px 1fr; gap: 12px; align-items: center; color: rgba(243,241,237,.78); line-height: 1.45; position: relative; z-index: 1; }
+.panelFeature { border: 1px solid rgba(243,241,237,.16); background: rgba(25,31,37,.52); padding: 18px; display: grid; grid-template-columns: 28px 1fr; gap: 12px; align-items: center; color: rgba(243,241,237,.78); line-height: 1.45; position: relative; z-index: 1; }
 .panelFeature svg { color: var(--gold); }
 .goldLine { height: 1px; background: var(--gold); width: 100%; margin: 24px 0 18px; position: relative; z-index: 1; }
 .heroPanel p { color: rgba(243,241,237,.72); line-height: 1.7; max-width: 360px; position: relative; z-index: 1; }
@@ -153,7 +156,7 @@ h2 { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(32px, 4vw,
 .aboutPortraitBlock:before { content: ''; position: absolute; inset: 28px -26px -26px 26px; border: 1px solid var(--gold); background: linear-gradient(135deg, rgba(202,168,95,.16), transparent 55%); z-index: 0; }
 .portraitFrame { position: relative; z-index: 1; border: 1px solid rgba(29,28,26,.18); background: var(--cloud); padding: 12px; box-shadow: 0 28px 80px rgba(38,38,35,.16); }
 .portraitFrame img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center top; display: block; filter: saturate(.94) contrast(1.02); }
-.portraitSeal { position: absolute; right: -34px; bottom: -34px; z-index: 2; width: 134px; height: 134px; display: grid; place-items: center; background: #686867; border: 1px solid var(--gold); box-shadow: 0 20px 54px rgba(38,38,35,.24); }
+.portraitSeal { position: absolute; right: -34px; bottom: -34px; z-index: 2; width: 134px; height: 134px; display: grid; place-items: center; background: #2d3943; border: 1px solid var(--gold); box-shadow: 0 20px 54px rgba(38,38,35,.24); }
 .portraitSeal img { width: 86%; height: 86%; object-fit: contain; display: block; }
 .aboutContent h2 { max-width: 720px; }
 .aboutText { color: #56524b; line-height: 1.78; font-size: 18px; }
@@ -171,7 +174,7 @@ h2 { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(32px, 4vw,
 .serviceCard:hover p { color: rgba(243,241,237,.72); }
 .serviceCard a { margin-top: auto; display: inline-flex; align-items: center; gap: 8px; color: var(--goldDeep); font-weight: 800; text-transform: uppercase; letter-spacing: .1em; font-size: 11px; }
 .serviceCard:hover a { color: var(--gold); }
-.premiumBand { max-width: none; background: linear-gradient(135deg, var(--graphite), #6f6d68); color: var(--cloud); display: grid; grid-template-columns: .9fr 1.1fr; gap: 42px; padding-left: clamp(20px, 7vw, 92px); padding-right: clamp(20px, 7vw, 92px); border-top: 1px solid var(--goldLine); border-bottom: 1px solid var(--goldLine); }
+.premiumBand { max-width: none; background: linear-gradient(135deg, #26313a, #4d5b64); color: var(--cloud); display: grid; grid-template-columns: .9fr 1.1fr; gap: 42px; padding-left: clamp(20px, 7vw, 92px); padding-right: clamp(20px, 7vw, 92px); border-top: 1px solid var(--goldLine); border-bottom: 1px solid var(--goldLine); }
 .bandIntro p:not(.eyebrow) { color: rgba(243,241,237,.74); line-height: 1.75; font-size: 18px; max-width: 560px; }
 .riskGrid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 26px; align-items: stretch; }
 .riskCard, .riskItem { border: 1px solid var(--line); background: rgba(250,248,243,.82); box-shadow: 0 18px 60px rgba(38,38,35,.06); }
@@ -192,11 +195,11 @@ h2 { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(32px, 4vw,
 .timelineItem h3 { margin-bottom: 8px; font-family: Georgia, serif; font-size: 26px; }
 .timelineItem p { color: var(--muted); line-height: 1.65; }
 .signatureBlock { text-align: center; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.signatureLogo { width: 118px; height: 118px; margin: 0 auto 28px; display: grid; place-items: center; background: #686867; border: 1px solid var(--gold); }
+.signatureLogo { width: 118px; height: 118px; margin: 0 auto 28px; display: grid; place-items: center; background: #2d3943; border: 1px solid var(--gold); }
 .signatureLogo img { width: 88%; height: 88%; object-fit: contain; display: block; }
 .iconSquare { width: 72px; height: 72px; display: grid; place-items: center; border: 1px solid var(--gold); color: var(--goldDeep); margin: 0 auto 28px; }
 .signatureBlock p { color: var(--muted); max-width: 620px; margin: 0 auto; line-height: 1.75; }
-.contact { max-width: none; background: linear-gradient(135deg, #4b4b49, #77736b); color: var(--cloud); display: flex; align-items: center; justify-content: space-between; gap: 28px; padding-left: clamp(20px, 7vw, 92px); padding-right: clamp(20px, 7vw, 92px); }
+.contact { max-width: none; background: linear-gradient(135deg, #26313a, #596872); color: var(--cloud); display: flex; align-items: center; justify-content: space-between; gap: 28px; padding-left: clamp(20px, 7vw, 92px); padding-right: clamp(20px, 7vw, 92px); }
 .contact h2 { max-width: 760px; }
 .contact p { color: rgba(243,241,237,.72); line-height: 1.7; }
 .floatingAction { position: fixed; z-index: 30; background: var(--gold); color: #282720; border: 1px solid rgba(255,255,255,.45); box-shadow: 0 18px 50px rgba(38,38,35,.22); padding: 15px 18px; text-transform: uppercase; letter-spacing: .12em; font-size: 11px; font-weight: 900; display: inline-flex; align-items: center; gap: 8px; cursor: grab; user-select: none; touch-action: none; }
@@ -233,8 +236,8 @@ h2 { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(32px, 4vw,
 .diagnostic {
   max-width: none;
   background:
-    linear-gradient(135deg, rgba(52,52,52,.95), rgba(108,106,101,.92)),
-    radial-gradient(circle at 88% 18%, rgba(202,168,95,.26), transparent 32%);
+    linear-gradient(135deg, rgba(38,49,58,.97), rgba(80,94,103,.94)),
+    radial-gradient(circle at 88% 18%, rgba(214,168,63,.34), transparent 32%);
   color: var(--cloud);
   display: grid;
   grid-template-columns: .78fr 1.22fr;
@@ -301,7 +304,7 @@ h2 { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(32px, 4vw,
 }
 .diagnosticResult {
   border: 1px solid var(--goldLine);
-  background: rgba(250,248,243,.96);
+  background: rgba(255,255,255,.98);
   color: var(--ink);
   padding: 30px;
   box-shadow: 0 28px 90px rgba(0,0,0,.22);
@@ -362,8 +365,8 @@ h2 { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(32px, 4vw,
 .smartHub {
   max-width: none;
   background:
-    linear-gradient(135deg, rgba(56,56,55,.96), rgba(105,104,100,.93)),
-    radial-gradient(circle at 86% 12%, rgba(202,168,95,.24), transparent 34%);
+    linear-gradient(135deg, rgba(38,49,58,.98), rgba(80,94,103,.94)),
+    radial-gradient(circle at 86% 12%, rgba(214,168,63,.36), transparent 34%);
   color: var(--cloud);
   padding-left: clamp(20px, 7vw, 92px);
   padding-right: clamp(20px, 7vw, 92px);
@@ -475,7 +478,7 @@ h2 { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(32px, 4vw,
 .smartResult {
   position: sticky;
   top: 18px;
-  background: rgba(250,248,243,.98);
+  background: rgba(255,255,255,.99);
   color: var(--ink);
   border-color: var(--goldLine);
   padding: 28px;
@@ -497,7 +500,7 @@ h2 { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(32px, 4vw,
 .scoreBox {
   border: 1px solid var(--line);
   padding: 22px;
-  background: #f5f2eb;
+  background: #f4f6f7;
   margin-bottom: 16px;
 }
 .scoreMeter {
@@ -577,7 +580,7 @@ h2 { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(32px, 4vw,
 .smartItem svg { color: var(--goldDeep); flex: 0 0 auto; }
 .messagePreview {
   border: 1px solid var(--line);
-  background: rgba(222,219,212,.45);
+  background: rgba(231,233,234,.72);
   padding: 16px;
   margin-bottom: 16px;
 }
@@ -684,9 +687,9 @@ h2 { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(32px, 4vw,
 
 .siteFooter {
   border-top: 1px solid rgba(70, 65, 58, .16);
-  background: #d8d5cd;
+  background: #eef0f1;
   padding: 36px clamp(20px, 6vw, 72px) 26px;
-  color: #5d5850;
+  color: #404950;
 }
 
 .footerTop {
@@ -708,7 +711,7 @@ h2 { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(32px, 4vw,
   width: 62px;
   height: 62px;
   object-fit: contain;
-  background: #ece9df;
+  background: #ffffff;
   border: 1px solid rgba(70, 65, 58, .16);
   padding: 8px;
 }
@@ -724,7 +727,7 @@ h2 { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(32px, 4vw,
 .footerBrand span {
   display: block;
   margin-top: 6px;
-  color: #6b655c;
+  color: #59636b;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: .08em;
@@ -766,7 +769,7 @@ h2 { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(32px, 4vw,
 }
 
 .footerBottom span {
-  color: #6b655c;
+  color: #59636b;
 }
 
 @media (max-width: 720px) {
