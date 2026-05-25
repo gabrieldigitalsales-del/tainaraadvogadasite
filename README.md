@@ -1,18 +1,16 @@
-# Biosite Inteligente - Tainara Araújo Advocacia
+# Biosite Tainara Araújo Advocacia
 
 Projeto Next.js + React + TypeScript preparado para Vercel.
 
-## O que mudou nesta versão
+## Estrutura
 
 - Visual cinza/grafite premium com detalhes dourados.
 - Logo e foto integradas.
 - Topo com carrossel institucional.
-- Seção de áreas de atuação.
-- Pré-diagnóstico inteligente antes do WhatsApp.
-- Cálculo visual de atenção jurídica do caso.
-- Checklist dinâmico de documentos por tipo de demanda.
-- Mensagem de WhatsApp gerada automaticamente com resumo do caso.
-- Botão para copiar o resumo.
+- Áreas de atuação.
+- Atendimento inicial por tipo de demanda.
+- Documentos recomendados por cenário.
+- Envio para WhatsApp com contexto do caso.
 - Projeto pronto para deploy na Vercel.
 
 ## Rodar localmente
@@ -51,8 +49,17 @@ Número configurado:
 5531972147510
 ```
 
-As mensagens inteligentes são geradas no componente:
+A mensagem de atendimento é configurada no componente:
 
 ```bash
 src/components/ClientDiagnostic.tsx
 ```
+
+
+## Resumo no atendimento
+
+A seção de atendimento monta automaticamente um resumo com tipo de demanda, momento do caso e urgência. O visitante pode copiar o resumo ou enviar diretamente para o WhatsApp já com a mensagem preenchida.
+
+## Responsividade
+
+O layout foi estruturado com CSS responsivo para desktop, tablet e celular. Em telas menores, grids, cards, carrossel e área de atendimento passam para uma coluna, mantendo botões e textos legíveis no mobile.

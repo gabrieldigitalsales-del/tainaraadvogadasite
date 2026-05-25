@@ -228,7 +228,7 @@ h2 { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(32px, 4vw,
   .floatingWhatsapp { left: 16px; right: 16px; text-align: center; }
 }
 
-/* Interação antes do WhatsApp */
+/* Atendimento antes do WhatsApp */
 .diagnostic {
   max-width: none;
   background:
@@ -357,7 +357,7 @@ h2 { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(32px, 4vw,
   .diagnosticResult h3 { font-size: 29px; }
 }
 
-/* Site inteligente: pré-diagnóstico avançado */
+/* Atendimento direcionado */
 .smartHub {
   max-width: none;
   background:
@@ -621,4 +621,31 @@ h2 { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(32px, 4vw,
   .needChoice { min-height: auto; }
   .questionBlock h3 { font-size: 24px; }
   .scoreBox h3 { font-size: 29px; }
+}
+
+.caseHeader {
+  border: 1px solid rgba(198, 160, 91, 0.32);
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.caseHeader span {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: var(--gold);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.caseHeader h3 {
+  margin: 0 0 10px;
+  color: var(--charcoal);
+  font-size: clamp(1.35rem, 2vw, 2rem);
+}
+
+.caseHeader p {
+  margin: 0;
+  color: var(--muted);
 }

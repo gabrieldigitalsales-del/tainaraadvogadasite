@@ -3,7 +3,7 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Dra. Tainara Araújo | Advocacia Imobiliária',
-  description: 'Biosite premium para advocacia imobiliária: assessoria, regularização, atuação extrajudicial e judicial.',
+  description: 'Advocacia imobiliária para compra e venda, regularização, contratos e soluções extrajudiciais e judiciais.',
   openGraph: {
     title: 'Dra. Tainara Araújo | Advocacia Imobiliária',
     description: 'Segurança jurídica para negócios imobiliários.',

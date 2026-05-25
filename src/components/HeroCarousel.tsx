@@ -35,7 +35,7 @@ export function HeroCarousel() {
         <nav className="desktopLinks" aria-label="Navegação principal">
           <a href="#sobre">Sobre</a>
           <a href="#servicos">Atuação</a>
-          <a href="#diagnostico">Diagnóstico</a>
+          <a href="#diagnostico">Atendimento</a>
           <a href="#checklist">Checklist</a>
           <a href="#contato">Contato</a>
         </nav>
@@ -59,7 +59,7 @@ export function HeroCarousel() {
 
           <div className="heroActions">
             <a className="primaryButton" href="#diagnostico">
-              Fazer pré-diagnóstico <ArrowRight size={18} />
+              Iniciar atendimento <ArrowRight size={18} />
             </a>
             <a className="secondaryButton" href="#servicos">Ver áreas de atuação</a>
           </div>
@@ -80,14 +80,14 @@ export function HeroCarousel() {
           </div>
         </div>
 
-        <aside className="heroPanel" aria-label="Resumo de atuação">
+        <aside className="heroPanel" aria-label="Atuação">
           <div className="panelTop">DIREITO IMOBILIÁRIO</div>
           <div className="panelLogoFrame">
             <img src="/logo-tainara.png" alt="Logo Tainara Araújo Advocacia" />
           </div>
           <div className="panelFeature">
             <FileSearch size={22} />
-            <span>Diagnóstico documental e análise de risco antes da decisão.</span>
+            <span>Análise documental e avaliação de riscos antes da decisão.</span>
           </div>
           <div className="goldLine" />
           <p>Contratos • Regularização • Due Diligence • Negociação • Contencioso</p>

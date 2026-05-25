@@ -3,20 +3,16 @@
 import { useMemo, useState } from 'react';
 import {
   AlertTriangle,
-  ArrowRight,
   Building2,
-  CheckCircle2,
   ClipboardList,
   Copy,
   FileText,
   Gavel,
   Home,
-  KeyRound,
   MessageCircle,
   Scale,
   ScrollText,
   ShieldAlert,
-  Sparkles,
 } from 'lucide-react';
 import { whatsappNumber } from '@/data/site';
 
@@ -84,63 +80,44 @@ const stageOptions: Array<{ id: StageId; label: string; score: number }> = [
   { id: 'problema', label: 'Já existe problema ou notificação', score: 38 },
 ];
 
-const needScore: Record<NeedId, number> = {
-  compra: 24,
-  contrato: 20,
-  regularizacao: 28,
-  conflito: 34,
-};
-
 export function ClientDiagnostic() {
   const [needId, setNeedId] = useState<NeedId>('compra');
   const [urgencyId, setUrgencyId] = useState<UrgencyId>('semana');
   const [stageId, setStageId] = useState<StageId>('negociando');
-  const [copied, setCopied] = useState(false);
 
   const need = needs.find((item) => item.id === needId) ?? needs[0];
   const urgency = urgencyOptions.find((item) => item.id === urgencyId) ?? urgencyOptions[1];
   const stage = stageOptions.find((item) => item.id === stageId) ?? stageOptions[1];
 
-  const score = Math.min(100, needScore[need.id] + urgency.score + stage.score);
-  const scoreLabel = score >= 78 ? 'Atenção alta' : score >= 52 ? 'Atenção moderada' : 'Análise preventiva';
-  const scoreText = score >= 78
-    ? 'O caso indica necessidade de avaliação jurídica com prioridade para evitar prejuízo, perda de prazo ou decisão insegura.'
-    : score >= 52
-      ? 'O caso merece análise técnica antes do próximo passo, principalmente se houver assinatura, pagamento ou entrega de documentos.'
-      : 'O momento é bom para prevenir riscos e organizar a decisão antes de assumir obrigação jurídica.';
-
   const whatsappMessage = useMemo(() => {
     return [
-      'Olá, Dra. Tainara. Vim pelo site e preenchi o pré-diagnóstico inteligente.',
+      'Olá, Dra. Tainara. Gostaria de orientação jurídica imobiliária.',
       '',
       `Tipo de caso: ${need.title}`,
       `Momento: ${stage.label}`,
       `Urgência: ${urgency.label}`,
-      `Leitura inicial: ${scoreLabel} (${score}/100)`,
       '',
-      'Gostaria de uma orientação jurídica imobiliária para entender os próximos passos.',
+      'Gostaria de orientação jurídica imobiliária para receber atendimento.',
     ].join('\n');
-  }, [need.title, stage.label, urgency.label, scoreLabel, score]);
+  }, [need.title, stage.label, urgency.label]);
 
   const contactLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
-  async function copySummary() {
+  const copySummary = async () => {
     try {
       await navigator.clipboard.writeText(whatsappMessage);
-      setCopied(true);
-      window.setTimeout(() => setCopied(false), 1800);
     } catch {
-      setCopied(false);
+      // O envio pelo WhatsApp continua funcionando mesmo quando o navegador bloqueia a copia.
     }
-  }
+  };
 
   return (
     <section className="section smartHub" id="diagnostico">
       <div className="smartIntro">
-        <p className="eyebrow dark">SITE INTELIGENTE</p>
-        <h2>Pré-diagnóstico que conduz o cliente antes do WhatsApp.</h2>
+        <p className="eyebrow dark">ATENDIMENTO IMOBILIÁRIO</p>
+        <h2>Comece pelo tipo de demanda.</h2>
         <p>
-          O visitante não chega com uma mensagem vazia. Ele escolhe o cenário, informa o momento do caso e recebe uma leitura inicial com documentos recomendados antes de iniciar o atendimento.
+          Selecione as opções correspondentes ao seu caso e siga para o atendimento pelo WhatsApp.
         </p>
       </div>
 
@@ -205,23 +182,16 @@ export function ClientDiagnostic() {
         </div>
 
         <aside className="smartPanel smartResult" aria-live="polite">
-          <div className="resultTopline">
-            <span><Sparkles size={18} /> leitura inteligente</span>
-            <strong>{score}/100</strong>
-          </div>
-
-          <div className="scoreBox">
-            <div className="scoreMeter" aria-label={`Pontuação de atenção ${score} de 100`}>
-              <span style={{ width: `${score}%` }} />
-            </div>
-            <h3>{scoreLabel}</h3>
-            <p>{scoreText}</p>
+          <div className="caseHeader">
+            <span>Atendimento imobiliário</span>
+            <h3>{need.title}</h3>
+            <p>{need.short}</p>
           </div>
 
           <div className="guidanceBox">
             <div className="guidanceIcon"><ShieldAlert size={24} /></div>
             <div>
-              <strong>Orientação inicial</strong>
+              <strong>Direcionamento inicial</strong>
               <p>{need.guidance}</p>
             </div>
           </div>
@@ -242,16 +212,16 @@ export function ClientDiagnostic() {
           </div>
 
           <div className="messagePreview">
-            <strong>Mensagem que será enviada</strong>
+            <strong>Resumo para atendimento</strong>
             <p>{whatsappMessage}</p>
           </div>
 
           <div className="smartActions">
             <a className="primaryButton" href={contactLink} target="_blank" rel="noreferrer">
-              Enviar pré-diagnóstico <MessageCircle size={18} />
+              Enviar pelo WhatsApp <MessageCircle size={18} />
             </a>
-            <button type="button" className="copyButton" onClick={copySummary}>
-              <Copy size={16} /> {copied ? 'Copiado' : 'Copiar resumo'}
+            <button className="copyButton" type="button" onClick={copySummary}>
+              Copiar <Copy size={16} />
             </button>
           </div>
         </aside>

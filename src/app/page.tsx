@@ -46,10 +46,10 @@ export default function Home() {
         <div className="sectionHeader splitHeader">
           <div>
             <p className="eyebrow dark">ÁREAS DE ATUAÇÃO</p>
-            <h2>Serviços jurídicos com posicionamento premium e foco preventivo.</h2>
+            <h2>Atuação jurídica imobiliária com precisão técnica e foco preventivo.</h2>
           </div>
           <p>
-            Uma estrutura inteligente: o visitante entende o risco, prepara documentos e chega ao atendimento com um pré-diagnóstico organizado.
+            Atendimento voltado à proteção de patrimônio, análise documental e condução segura de negociações imobiliárias.
           </p>
         </div>
         <div className="serviceGrid">
@@ -59,7 +59,7 @@ export default function Home() {
               <h3>{service.title}</h3>
               <p>{service.description}</p>
               <a href="#diagnostico">
-                Fazer pré-diagnóstico <ArrowUpRight size={16} />
+                Iniciar atendimento <ArrowUpRight size={16} />
               </a>
             </article>
           ))}
@@ -74,9 +74,9 @@ export default function Home() {
           <p className="eyebrow dark">CHECKLIST DE RISCO</p>
           <h2>O que precisa ser analisado antes de negociar um imóvel?</h2>
           <p>
-            Uma seção educativa aumenta autoridade e ajuda o cliente a perceber o valor da contratação antes do contato.
+            Antes de assinar, pagar sinal ou assumir qualquer obrigação, alguns pontos devem ser avaliados com cuidado técnico.
           </p>
-          <a className="textLink" href="#diagnostico">Fazer análise inteligente <ArrowUpRight size={16} /></a>
+          <a className="textLink" href="#diagnostico">Verificar meu caso <ArrowUpRight size={16} /></a>
         </div>
         <div className="riskList">
           {riskItems.map((item) => (
@@ -91,8 +91,8 @@ export default function Home() {
       <section className="section method" id="metodo">
         <div className="methodCard darkCard">
           <Landmark size={28} />
-          <h2>Método de atendimento</h2>
-          <p>Um processo objetivo para entender o caso, reduzir riscos e conduzir a solução com elegância institucional.</p>
+          <h2>Como funciona o atendimento</h2>
+          <p>Um processo objetivo para compreender o caso, reduzir riscos e conduzir cada etapa com segurança jurídica.</p>
         </div>
         <div className="timeline">
           {journeySteps.map((step) => (
@@ -112,7 +112,7 @@ export default function Home() {
         <div className="iconSquare"><ShieldCheck size={30} /></div>
         <h2>Transparência, segurança e agilidade em cada negociação.</h2>
         <p>
-          Uma presença digital com jornada inteligente: o cliente entende o próprio caso, percebe urgência e inicia o contato com informações úteis.
+          Atendimento jurídico voltado a decisões imobiliárias importantes, com clareza, estratégia e cuidado em cada etapa.
         </p>
       </section>
 
@@ -120,15 +120,15 @@ export default function Home() {
         <div>
           <p className="eyebrow">ATENDIMENTO</p>
           <h2>Precisa de orientação jurídica imobiliária?</h2>
-          <p>Use o pré-diagnóstico para organizar seu caso e iniciar o atendimento com mais clareza.</p>
+          <p>Informe o contexto inicial do seu caso e receba o direcionamento para iniciar o atendimento.</p>
         </div>
         <a className="primaryButton light" href="#diagnostico">
-          Fazer pré-diagnóstico <Gavel size={18} />
+          Iniciar atendimento <Gavel size={18} />
         </a>
       </section>
 
-      <a className="floatingWhatsapp" href="#diagnostico" aria-label="Fazer pré-diagnóstico">
-        Pré-diagnóstico
+      <a className="floatingWhatsapp" href="#diagnostico" aria-label="Iniciar atendimento">
+        Atendimento
       </a>
     </main>
   );

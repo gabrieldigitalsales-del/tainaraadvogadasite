@@ -1,5 +1,5 @@
 export const whatsappNumber = '5531972147510';
-export const contactMessage = 'Olá, Dra. Tainara. Vim pelo site e gostaria de atendimento jurídico imobiliário.';
+export const contactMessage = 'Olá, Dra. Tainara. Gostaria de atendimento jurídico imobiliário.';
 export const contactLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(contactMessage)}`;
 
 export const heroSlides = [
@@ -63,19 +63,19 @@ export const riskItems = [
 
 export const journeySteps = [
   {
-    title: '1. Pré-diagnóstico',
-    text: 'Entendimento do objetivo, urgência, documentos disponíveis e contexto do imóvel.',
+    title: '1. Coleta inicial',
+    text: 'Identificação do objetivo, urgência, documentos disponíveis e contexto do imóvel.',
   },
   {
     title: '2. Análise técnica',
     text: 'Verificação dos pontos críticos, riscos, alternativas e providências necessárias.',
   },
   {
-    title: '3. Plano jurídico',
-    text: 'Direcionamento claro para negociar, contratar, regularizar ou judicializar com segurança.',
+    title: '3. Direcionamento jurídico',
+    text: 'Definição dos próximos passos para negociar, contratar, regularizar ou judicializar com segurança.',
   },
   {
-    title: '4. Execução acompanhada',
-    text: 'Condução do caso com atualizações, organização documental e próximos passos definidos.',
+    title: '4. Acompanhamento',
+    text: 'Condução do caso com organização documental, acompanhamento e comunicação objetiva.',
   },
 ];
