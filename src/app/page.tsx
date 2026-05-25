@@ -1,6 +1,7 @@
-import { ArrowUpRight, Check, Gavel, Landmark, Quote, ShieldCheck } from 'lucide-react';
+import { ArrowUpRight, Check, ClipboardCheck, FileSearch, Gavel, Landmark, Quote, ShieldCheck } from 'lucide-react';
 import { HeroCarousel } from '@/components/HeroCarousel';
-import { contactLink, services, stats } from '@/data/site';
+import { ClientDiagnostic } from '@/components/ClientDiagnostic';
+import { journeySteps, riskItems, services, stats } from '@/data/site';
 
 export default function Home() {
   return (
@@ -28,7 +29,7 @@ export default function Home() {
 
         <div className="aboutContent">
           <p className="eyebrow dark">SOBRE A ADVOGADA</p>
-          <h2>Presença, técnica e segurança para conduzir decisões imobiliárias importantes.</h2>
+          <h2>Presença técnica para proteger decisões imobiliárias importantes.</h2>
           <div className="aboutText boxedText">
             <Quote size={26} />
             <p>
@@ -42,9 +43,14 @@ export default function Home() {
       </section>
 
       <section className="section services" id="servicos">
-        <div className="sectionHeader">
-          <p className="eyebrow dark">CATÁLOGO</p>
-          <h2>Serviços jurídicos com estética premium e foco em resultado.</h2>
+        <div className="sectionHeader splitHeader">
+          <div>
+            <p className="eyebrow dark">ÁREAS DE ATUAÇÃO</p>
+            <h2>Serviços jurídicos com posicionamento premium e foco preventivo.</h2>
+          </div>
+          <p>
+            Uma estrutura inteligente: o visitante entende o risco, prepara documentos e chega ao atendimento com um pré-diagnóstico organizado.
+          </p>
         </div>
         <div className="serviceGrid">
           {services.map((service, index) => (
@@ -52,10 +58,32 @@ export default function Home() {
               <span className="cardNumber">0{index + 1}</span>
               <h3>{service.title}</h3>
               <p>{service.description}</p>
-              <a href={contactLink} target="_blank" rel="noreferrer">
-                Entre em contato <ArrowUpRight size={16} />
+              <a href="#diagnostico">
+                Fazer pré-diagnóstico <ArrowUpRight size={16} />
               </a>
             </article>
+          ))}
+        </div>
+      </section>
+
+      <ClientDiagnostic />
+
+      <section className="section riskGrid" id="checklist">
+        <div className="riskCard mainRisk">
+          <FileSearch size={30} />
+          <p className="eyebrow dark">CHECKLIST DE RISCO</p>
+          <h2>O que precisa ser analisado antes de negociar um imóvel?</h2>
+          <p>
+            Uma seção educativa aumenta autoridade e ajuda o cliente a perceber o valor da contratação antes do contato.
+          </p>
+          <a className="textLink" href="#diagnostico">Fazer análise inteligente <ArrowUpRight size={16} /></a>
+        </div>
+        <div className="riskList">
+          {riskItems.map((item) => (
+            <div className="riskItem" key={item}>
+              <ClipboardCheck size={20} />
+              <span>{item}</span>
+            </div>
           ))}
         </div>
       </section>
@@ -67,16 +95,12 @@ export default function Home() {
           <p>Um processo objetivo para entender o caso, reduzir riscos e conduzir a solução com elegância institucional.</p>
         </div>
         <div className="timeline">
-          {[
-            ['Diagnóstico', 'Levantamento inicial do objetivo, urgência, documentos e riscos envolvidos.'],
-            ['Estratégia', 'Definição do caminho jurídico mais seguro: extrajudicial, negocial ou judicial.'],
-            ['Execução', 'Acompanhamento técnico, comunicação clara e condução até a resolução.'],
-          ].map(([title, text]) => (
-            <div className="timelineItem" key={title}>
+          {journeySteps.map((step) => (
+            <div className="timelineItem" key={step.title}>
               <Check size={18} />
               <div>
-                <h3>{title}</h3>
-                <p>{text}</p>
+                <h3>{step.title}</h3>
+                <p>{step.text}</p>
               </div>
             </div>
           ))}
@@ -88,7 +112,7 @@ export default function Home() {
         <div className="iconSquare"><ShieldCheck size={30} /></div>
         <h2>Transparência, segurança e agilidade em cada negociação.</h2>
         <p>
-          Uma presença digital feita para transmitir autoridade, confiança e valor percebido desde o primeiro clique.
+          Uma presença digital com jornada inteligente: o cliente entende o próprio caso, percebe urgência e inicia o contato com informações úteis.
         </p>
       </section>
 
@@ -96,12 +120,16 @@ export default function Home() {
         <div>
           <p className="eyebrow">ATENDIMENTO</p>
           <h2>Precisa de orientação jurídica imobiliária?</h2>
-          <p>Solicite uma avaliação e receba direcionamento profissional para seu caso.</p>
+          <p>Use o pré-diagnóstico para organizar seu caso e iniciar o atendimento com mais clareza.</p>
         </div>
-        <a className="primaryButton light" href={contactLink} target="_blank" rel="noreferrer">
-          Falar com a Dra. Tainara <Gavel size={18} />
+        <a className="primaryButton light" href="#diagnostico">
+          Fazer pré-diagnóstico <Gavel size={18} />
         </a>
       </section>
+
+      <a className="floatingWhatsapp" href="#diagnostico" aria-label="Fazer pré-diagnóstico">
+        Pré-diagnóstico
+      </a>
     </main>
   );
 }

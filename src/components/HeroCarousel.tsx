@@ -1,9 +1,9 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
-import { contactLink, heroSlides } from '@/data/site';
+import { AnimatePresence, motion } from 'framer-motion';
+import { ArrowRight, ChevronLeft, ChevronRight, FileSearch, Scale } from 'lucide-react';
+import { heroSlides } from '@/data/site';
 
 export function HeroCarousel() {
   const [active, setActive] = useState(0);
@@ -12,7 +12,7 @@ export function HeroCarousel() {
   useEffect(() => {
     const timer = window.setInterval(() => {
       setActive((current) => (current + 1) % heroSlides.length);
-    }, 5200);
+    }, 5600);
     return () => window.clearInterval(timer);
   }, []);
 
@@ -34,8 +34,9 @@ export function HeroCarousel() {
         </a>
         <nav className="desktopLinks" aria-label="Navegação principal">
           <a href="#sobre">Sobre</a>
-          <a href="#servicos">Serviços</a>
-          <a href="#metodo">Método</a>
+          <a href="#servicos">Atuação</a>
+          <a href="#diagnostico">Diagnóstico</a>
+          <a href="#checklist">Checklist</a>
           <a href="#contato">Contato</a>
         </nav>
       </div>
@@ -57,8 +58,8 @@ export function HeroCarousel() {
           </AnimatePresence>
 
           <div className="heroActions">
-            <a className="primaryButton" href={contactLink} target="_blank" rel="noreferrer">
-              Solicitar atendimento <ArrowRight size={18} />
+            <a className="primaryButton" href="#diagnostico">
+              Fazer pré-diagnóstico <ArrowRight size={18} />
             </a>
             <a className="secondaryButton" href="#servicos">Ver áreas de atuação</a>
           </div>
@@ -79,15 +80,19 @@ export function HeroCarousel() {
           </div>
         </div>
 
-        <div className="heroPanel" aria-hidden="true">
+        <aside className="heroPanel" aria-label="Resumo de atuação">
           <div className="panelTop">DIREITO IMOBILIÁRIO</div>
           <div className="panelLogoFrame">
-            <img src="/logo-tainara.png" alt="" />
+            <img src="/logo-tainara.png" alt="Logo Tainara Araújo Advocacia" />
+          </div>
+          <div className="panelFeature">
+            <FileSearch size={22} />
+            <span>Diagnóstico documental e análise de risco antes da decisão.</span>
           </div>
           <div className="goldLine" />
           <p>Contratos • Regularização • Due Diligence • Negociação • Contencioso</p>
-          <div className="panelFooter">OAB/MG 201.625</div>
-        </div>
+          <div className="panelFooter"><Scale size={16} /> OAB/MG 201.625</div>
+        </aside>
       </div>
     </section>
   );

@@ -1,65 +1,58 @@
-# Biosite Premium - Dra. Tainara Araujo
+# Biosite Inteligente - Tainara Araújo Advocacia
 
-Projeto premium em Next.js + React + TypeScript, com estetica advocaticia de luxo, bordas quadradas e carrossel no topo.
+Projeto Next.js + React + TypeScript preparado para Vercel.
 
-## Como rodar
+## O que mudou nesta versão
+
+- Visual cinza/grafite premium com detalhes dourados.
+- Logo e foto integradas.
+- Topo com carrossel institucional.
+- Seção de áreas de atuação.
+- Pré-diagnóstico inteligente antes do WhatsApp.
+- Cálculo visual de atenção jurídica do caso.
+- Checklist dinâmico de documentos por tipo de demanda.
+- Mensagem de WhatsApp gerada automaticamente com resumo do caso.
+- Botão para copiar o resumo.
+- Projeto pronto para deploy na Vercel.
+
+## Rodar localmente
 
 ```bash
 npm install
 npm run dev
 ```
 
-Acesse: http://localhost:3000
+Depois acesse:
 
-## Como trocar o WhatsApp
-
-Abra `src/data/site.ts` e substitua:
-
-```ts
-export const whatsappNumber = '5531972147510';
+```bash
+http://localhost:3000
 ```
-
-Use o formato com DDI + DDD + numero, somente digitos.
-Exemplo: `5531999999999`.
-
-## Onde editar textos
-
-- Textos do carrossel: `src/data/site.ts`
-- Servicos: `src/data/site.ts`
-- Conteudo da pagina: `src/app/page.tsx`
-- Aparencia visual: `src/app/globals.css`
 
 ## Publicar na Vercel
 
-Este pacote ja esta preparado para deploy na Vercel.
+1. Crie um repositório no GitHub.
+2. Envie estes arquivos para o repositório.
+3. Na Vercel, clique em **Add New Project**.
+4. Selecione o repositório.
+5. A Vercel detectará Next.js automaticamente.
+6. Clique em **Deploy**.
 
-### Opção 1: Deploy via GitHub
+## WhatsApp
 
-1. Crie um repositorio no GitHub e envie esta pasta.
-2. Entre em https://vercel.com/new
-3. Importe o repositorio.
-4. A Vercel deve detectar automaticamente o framework Next.js.
-5. Confirme:
-   - Install Command: `npm install`
-   - Build Command: `npm run build`
-   - Development Command: `npm run dev`
-6. Clique em Deploy.
-
-### Opção 2: Deploy via Vercel CLI
+O número está em:
 
 ```bash
-npm install -g vercel
-vercel
+src/data/site.ts
 ```
 
-Para publicar em producao:
+Número configurado:
 
 ```bash
-vercel --prod
+5531972147510
 ```
 
-## WhatsApp configurado
+As mensagens inteligentes são geradas no componente:
 
-O numero atual configurado e `5531972147510`.
-
-A mensagem automatica continua configurada no arquivo `src/data/site.ts` dentro de `contactLink`.
+```bash
+src/components/ClientDiagnostic.tsx
+```
