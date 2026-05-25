@@ -1,5 +1,6 @@
 import { ArrowUpRight, Check, ClipboardCheck, FileSearch, Gavel, Landmark, Quote, ShieldCheck } from 'lucide-react';
 import { HeroCarousel } from '@/components/HeroCarousel';
+import { FloatingAction } from '@/components/FloatingAction';
 import { ClientDiagnostic } from '@/components/ClientDiagnostic';
 import { journeySteps, riskItems, services, stats } from '@/data/site';
 
@@ -121,15 +122,44 @@ export default function Home() {
           <p className="eyebrow">ATENDIMENTO</p>
           <h2>Precisa de orientação jurídica imobiliária?</h2>
           <p>Informe o contexto inicial do seu caso e receba o direcionamento para iniciar o atendimento.</p>
+          <div className="contactSocial">
+            <a href="https://www.instagram.com/tainaraaraujoadvocacia/" target="_blank" rel="noreferrer" aria-label="Instagram da Dra. Tainara Araújo Advocacia">
+              <span>📸</span> Instagram profissional
+            </a>
+          </div>
         </div>
         <a className="primaryButton light" href="#diagnostico">
           Iniciar atendimento <Gavel size={18} />
         </a>
       </section>
 
-      <a className="floatingWhatsapp" href="#diagnostico" aria-label="Iniciar atendimento">
-        Atendimento
-      </a>
+      <footer className="siteFooter">
+        <div className="footerTop">
+          <div className="footerBrand">
+            <img src="/logo-tainara.png" alt="Logo Tainara Araújo Advocacia" />
+            <div>
+              <strong>Dra. Tainara Araújo Advocacia</strong>
+              <span>Advocacia Imobiliária • OAB/MG 201.625</span>
+            </div>
+          </div>
+
+          <nav className="footerNav" aria-label="Links do rodapé">
+            <a href="#sobre">Sobre</a>
+            <a href="#servicos">Áreas de atuação</a>
+            <a href="#diagnostico">Atendimento</a>
+            <a href="#contato">Contato</a>
+          </nav>
+        </div>
+
+        <div className="footerBottom">
+          <span>© 2026 Dra. Tainara Araújo. Todos os direitos reservados.</span>
+          <a href="https://www.instagram.com/nexor_digital_" target="_blank" rel="noreferrer" aria-label="Instagram da Nexor Digital">
+            Feito pela Nexor Digital
+          </a>
+        </div>
+      </footer>
+
+      <FloatingAction />
     </main>
   );
 }

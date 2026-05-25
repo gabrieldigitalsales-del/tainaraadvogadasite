@@ -63,3 +63,10 @@ A seção de atendimento monta automaticamente um resumo com tipo de demanda, mo
 ## Responsividade
 
 O layout foi estruturado com CSS responsivo para desktop, tablet e celular. Em telas menores, grids, cards, carrossel e área de atendimento passam para uma coluna, mantendo botões e textos legíveis no mobile.
+
+
+## Ajustes desta versão
+
+- Botão flutuante de atendimento agora pode ser arrastado pela tela, evitando que cubra o rodapé em telas menores.
+- Footer com Instagram oficial da Dra. Tainara Araújo Advocacia.
+- Créditos mantidos com link para a Nexor Digital.
